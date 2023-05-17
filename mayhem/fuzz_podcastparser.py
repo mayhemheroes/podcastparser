@@ -13,8 +13,8 @@ def RandomString(fdp, min_len, max_len):
 def TestOneInput(data):
     fdp = atheris.FuzzedDataProvider(data)
 
-    str_1 = RandomString(fdp, 1, 100)
-    str_2= RandomString(fdp, 1, 100)
+    str_1 = RandomString(fdp, 1, 1000)
+    str_2= RandomString(fdp, 1, 1000)
 
     try:
         parse(str_1, str_2)
