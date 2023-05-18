@@ -1,4 +1,4 @@
-project: PROJECT_NAME
+project: podcastparser
 target: podcastparser
 duration: 600
 cmds:
