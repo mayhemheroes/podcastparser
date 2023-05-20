@@ -1,0 +1,6 @@
+project: podcastparser
+target: podcastparser
+duration: 600
+cmds:
+    - cmd: /src/mayhem/fuzz_podcastparser.py
+      libfuzzer: true
