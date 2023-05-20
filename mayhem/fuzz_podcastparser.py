@@ -6,15 +6,11 @@ from urllib.error import URLError
 with atheris.instrument_imports():
     from podcastparser import parse
 
-def RandomString(fdp, min_len, max_len):
-  str_len = fdp.ConsumeIntInRange(min_len, max_len)
-  return fdp.ConsumeUnicodeNoSurrogates(str_len)
-
 def TestOneInput(data):
     fdp = atheris.FuzzedDataProvider(data)
 
-    str_1 = RandomString(fdp, 1, 1000)
-    str_2= RandomString(fdp, 1, 1000)
+    str_1 = fdp.ConsumeUnicodeNoSurrogates(1000)
+    str_2= fdp.ConsumeUnicodeNoSurrogates(1000)
 
     try:
         parse(str_1, str_2)
